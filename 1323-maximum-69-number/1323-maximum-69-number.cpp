@@ -7,6 +7,7 @@ public:
             if(flag == false && s[i] == '6'){
                 flag = true;
                 s[i] = '9';
+                break;
             }
         }
         int ans = stoi(s);
@@ -14,3 +15,4 @@ public:
     }
     
 };
+// Time Taken : 00 : 25 : 57
