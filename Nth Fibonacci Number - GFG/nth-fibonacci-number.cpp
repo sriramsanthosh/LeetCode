@@ -10,15 +10,19 @@ using namespace std;
 
 class Solution {
   public:
+    #define ll long long
+    #define mod 1000000007
+    
     long long int nthFibonacci(long long int n){
         // code here
-        long long int arr[n+2];
-        arr[0] = 0;
-        arr[1] = 1;
-        for(long long int i = 2; i<=n; i++){
-            arr[i] = (arr[i-1]+arr[i-2])%mod;
+        ll prev2 = 0;
+        ll prev1 = 1;
+        for(ll i = 2; i<=n; i++){
+            ll curr = (prev1+prev2)%mod;
+            prev2 = prev1;
+            prev1 = curr;
         }
-        return arr[n];
+        return prev1;
     }
 };
 
